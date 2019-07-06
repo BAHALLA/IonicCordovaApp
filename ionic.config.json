@@ -1,5 +1,7 @@
 {
   "name": "mesTechniciens",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
