@@ -5,8 +5,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'menu', pathMatch: 'full' },
   { path: 'splash', loadChildren: './splash/splash.module#SplashPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' }
- 
+  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
+  { path: 'location-details', loadChildren: './location-details/location-details.module#LocationDetailsPageModule' }
 ];
 
 @NgModule({
