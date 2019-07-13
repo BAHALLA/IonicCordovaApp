@@ -2,6 +2,7 @@ export interface PlaceModel {
     title: string;
     city?: string;
     country?: string;
+    keywords?: string;
     selected?: boolean;
     timestamp?: number;
     coordinates ?:{

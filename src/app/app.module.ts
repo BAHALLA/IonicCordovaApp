@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 import {IonicStorageModule} from '@ionic/storage';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
+import {AgmCoreModule} from '@agm/core';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -18,7 +19,10 @@ import {Geolocation} from '@ionic-native/geolocation/ngx';
             IonicStorageModule.forRoot({
               name: 'myLocations',
               driverOrder: ['indexeddb', 'sqlite', 'websql']
-            })
+            }),
+            AgmCoreModule.forRoot({
+              apiKey: 'AIzaSyBVgQPl5lDziOqdpY8CRdFytNxs9tMfPug'
+             })
   ],
   providers: [
       Geolocation,

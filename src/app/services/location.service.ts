@@ -7,6 +7,7 @@ import {Storage} from '@ionic/storage';
 })
 export class LocationService {
   private locations: Array<PlaceModel> = [];
+  public currentLocation: PlaceModel;
 
   constructor(private storage : Storage) {
   }

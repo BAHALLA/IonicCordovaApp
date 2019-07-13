@@ -15,7 +15,7 @@
 <ion-content>
     <ion-list *ngIf="locations">
         <ion-item *ngFor="let l of locations">
-           <ion-label> {{l.title}} </ion-label>
+           <ion-label (click)="onLocationDetail(l)"> {{l.title}} </ion-label>
            <ion-icon slot="end" name="remove" (click)="onRemove(l)"></ion-icon>
         </ion-item>
     </ion-list>

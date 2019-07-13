@@ -1,9 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>location-details</ion-title>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Location details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-list>
+      <ion-item>
+        <ion-label>Title</ion-label>
+        <ion-label><strong>{{currentLocation.title}}</strong></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>City</ion-label>
+        <ion-label><strong>{{currentLocation.city}}</strong></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Country</ion-label>
+        <ion-label><strong>{{currentLocation.country}}</strong></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Keywords</ion-label>
+        <ion-label><strong>{{currentLocation.keywords}}</strong></ion-label>
+      </ion-item>
+    </ion-list>
+  <ion-card>
+    <ion-card-content>
+      <agm-map [latitude]="currentLocation.coordinates.latitude" [longitude]="currentLocation.coordinates.longitude">
+        <agm-marker [latitude]="currentLocation.coordinates.latitude" [longitude]="currentLocation.coordinates.longitude"></agm-marker>
+      </agm-map>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { LocationDetailsPage } from './location-details.page';
+import {AgmCoreModule} from '@agm/core';
 
 const routes: Routes = [
   {
@@ -19,7 +20,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBVgQPl5lDziOqdpY8CRdFytNxs9tMfPug'
+    })
   ],
   declarations: [LocationDetailsPage]
 })
