@@ -3,6 +3,11 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onTakePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Location details</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -31,6 +36,12 @@
       <agm-map [latitude]="currentLocation.coordinates.latitude" [longitude]="currentLocation.coordinates.longitude">
         <agm-marker [latitude]="currentLocation.coordinates.latitude" [longitude]="currentLocation.coordinates.longitude"></agm-marker>
       </agm-map>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let im of currentLocation.photos">
+    <ion-card-content>
+      <ion-img [src]="im"></ion-img>
     </ion-card-content>
   </ion-card>
 </ion-content>

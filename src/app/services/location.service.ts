@@ -27,4 +27,15 @@ export class LocationService {
   public updateLocations(locations) {
         this.storage.set("locations",locations);
     }
+
+    addPhotoLocation(base64Image: string, timestamp: number) {
+
+        for (let i = 0; i < this.locations.length ; i++) {
+            if(this.locations[i].timestamp === timestamp){
+                this.locations[i].photos.push(base64Image);
+                this.updateLocations(this.locations);
+                break;
+            }
+        }
+    }
 }

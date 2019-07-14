@@ -3,6 +3,7 @@ import {PlaceModel} from '../models/place.model';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
 import {LocationService} from '../services/location.service';
 import {NavController} from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-location',
@@ -12,7 +13,7 @@ import {NavController} from '@ionic/angular';
 export class NewLocationPage implements OnInit {
 
   constructor(private geolcation: Geolocation, private locationService: LocationService
-  , private navController: NavController) { }
+  , private navController: NavController,private  router: Router) { }
 
   ngOnInit() {
   }
@@ -26,7 +27,8 @@ export class NewLocationPage implements OnInit {
               longitude: resp.coords.longitude
           };
           this.locationService.addLocation(data);
-          this.navController.back();
+          this.router.navigateByUrl("/menu/locations");
+         // this.navController.back();
       });
      // console.log(data);
     }

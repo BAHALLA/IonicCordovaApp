@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http'
 import {IonicStorageModule} from '@ionic/storage';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
 import {AgmCoreModule} from '@agm/core';
+import {Camera} from '@ionic-native/camera/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,6 +26,7 @@ import {AgmCoreModule} from '@agm/core';
              })
   ],
   providers: [
+      Camera,
       Geolocation,
     StatusBar,
     SplashScreen,
